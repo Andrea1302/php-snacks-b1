@@ -47,6 +47,10 @@
 
 <h2>
     Snack 1 
+
+    <!-- Creiamo un array contenente le partite di basket di un'ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema.
+
+    Olimpia Milano - Cantù | 55-60 -->
 </h2>
 <p>
     <?php
@@ -57,6 +61,36 @@
     ?>
 </p>
 
+
+<h2>
+    Snack 2
+
+    <!-- Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare "Accesso riuscito", altrimenti "Accesso negato" -->
+</h2>
+
+    <?php
+        $nomeTrovato = $_GET["nome"];
+        $mailTrovata = $_GET["mail"];
+        $ageTrovata = $_GET["age"];
+
+
+        $hasAt = strpos($mailTrovata , "@");
+        $hasDot = strpos($mailTrovata , ".");
+        $isMailOk = $hasAt !== false && $hasDot !== false;
+
+        $isNumber = is_numeric($ageTrovata)
+    ?>
+
+<p>
+    <?php
+        echo strlen($nomeTrovato);
+        if ( strlen($nomeTrovato) > 3 && $isMailOk && $isNumber){
+            echo "Accesso riuscito";
+        } else {
+            echo "Accesso negato";
+        }
+    ?>
+</p>
 
 </body>
 </html>
