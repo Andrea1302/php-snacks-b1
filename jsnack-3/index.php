@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+    <style>
+        div{
+            border: 1px solid black;
+            padding: 5px;
+        }
+        h3{
+            color:red;
+        }
+    </style>
 <h2>
     Snack 3 
 
@@ -57,19 +66,19 @@ $posts = [
 
 ?>
 
-<p>
+<div>
     <?php 
             $keys = array_keys($posts);
-            var_dump($posts[$keys[0]][0]['title']);
             for ( $i = 0 ; $i < count($keys); $i++){
                 $key = $keys[$i];
                 for ( $j = 0 ; $j < count($posts[$key]); $j++){
                     $post = $posts[$key][$j];
-                    echo $post['title'];
+
+                    echo "<div>". "<h3>" . $post['title'] . "</h3>"  . "<h4>" . $post['author'] . "</h4>" . "<p>" . $post['text'] . "</p>" . "</div>";
                 }
             }
 
     ?>
-</p>
+</div>
 </body>
 </html>
